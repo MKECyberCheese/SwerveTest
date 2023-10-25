@@ -4,7 +4,6 @@
 
 package frc.robot;
 
-import com.kauailabs.navx.frc.AHRS;
 import com.revrobotics.CANSparkMax.IdleMode;
 import java.util.function.BooleanSupplier;
 
@@ -15,7 +14,6 @@ import edu.wpi.first.math.kinematics.SwerveDriveKinematics;
 import edu.wpi.first.math.trajectory.TrajectoryConfig;
 import edu.wpi.first.math.trajectory.TrapezoidProfile;
 import edu.wpi.first.math.util.Units;
-import edu.wpi.first.wpilibj.SerialPort;
 
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide
@@ -30,6 +28,7 @@ import edu.wpi.first.wpilibj.SerialPort;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
+  
   public static final class Sensors {
     public static final AHRS gyro = new AHRS(SerialPort.Port.kUSB);
   }
@@ -42,6 +41,7 @@ public final class Constants {
     // the robot, rather the allowed maximum speeds
     public static final double kMaxSpeedMetersPerSecond = 4.8;
     public static final double kMaxAngularSpeed = 2 * Math.PI; // radians per second
+
 
     public static final double kSlowModifier = 0.7;
 
@@ -87,8 +87,7 @@ public final class Constants {
     // This changes the drive speed of the module (a pinion gear with more teeth
     // will result in a
     // robot that drives faster).
-    // Currently 12T is installed on the robot
-    public static final int kDrivingMotorPinionTeeth = 12;
+    public static final int kDrivingMotorPinionTeeth = 14;
 
     // Invert the turning encoder, since the output shaft rotates in the opposite
     // direction of
@@ -141,6 +140,8 @@ public final class Constants {
     public static final int kDriverControllerPort = 0;
     public static final int kButtonPort = 2;
     public static final double kDriveDeadband = 0.03;
+
+
   }
 
   public static final class AutoConstants {
